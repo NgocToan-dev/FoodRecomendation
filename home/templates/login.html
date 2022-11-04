@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="align">
+  <div class="grid">
+    <p style="text-align: center;font-size: 30px;">Đăng nhập</p>
+    <select class="userName" id="search" name="username">
+      {% for user in users %}
+      <option value="{{user}}">{{user}}</option>
+      {% endfor %}
+    </select>
+
+  </div>
+  <div id="loading">
+    <img id="loading-image" src="/static/img/Spinner-1s-200px.gif" alt="Loading..." />
+  </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+  $(document).ready(function () {
+    initEvent();
+    function initEvent() {
+      $('#loading').hide();
+      recommendation();
+    }
+    function recommendation() {
+      $('#search').change(function () {
+        var searchValue = $('#search').val();
+        $('#loading').show();
+        $.ajax({
+          url: '',
+          type: 'POST',
+          data: {
+            'recommendation': 'recommendation',
+            'searchValue': searchValue,
+            csrfmiddlewaretoken: '{{ csrf_token }}'
+          },
+          success: function (data) {
+            window.location.href = '/homePage/';
+          },
+          error: function (data) {
+            console.log(data);
+          }
+        });
+      });
+    }
+  });
+</script>
+{% endblock %}

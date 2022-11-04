@@ -1,0 +1,60 @@
+
+main{
+    width: 100%;
+    height: calc(100% - 50px);
+    padding: 0 15px 10px 15px;
+    background-color: #F4F4F4;
+}
+main .header-main{
+    padding: 5px 0;
+    height: 50px;
+}
+main .background-main{
+    height: calc(100% - 50px);
+    width: 100%;
+    border-radius: 5px;
+    background-color: #fff;
+}
+main .toolbar{
+    height: 50px;
+    padding: 10px;
+}
+main #search{
+    width: 220px;
+}
+main #product-data{
+    height: calc(100% - 50px);
+    padding: 0 10px;
+    overflow: auto;
+    position: relative;
+}
+main thead{
+    background-color: #f2f2f2;
+    color: #fff;
+}
+main tr{
+    border-bottom: 1px solid #e9e5e5;
+    height: 31px;
+}
+main .table-function{
+    width: 100px;
+}
+main .nav-item{
+    cursor: pointer;
+    margin: 5px 5px;
+    border: 1px solid #d0bebe;
+    border-radius: 6px;
+}
+main .nav-item:hover{
+    background: #e9e5e5;
+}
+main .nav-item:hover a{
+    color: #5C2C39 !important;
+}
+main .nav-item.nav-item-active{
+    background: #e9e5e5;
+}
+main .btn-edit i{
+    color: #fff;
+}
+

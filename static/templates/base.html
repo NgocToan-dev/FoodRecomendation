@@ -1,0 +1,53 @@
+
+
+  <!DOCTYPE html>
+  <html style="font-size: 16px;" lang="en">
+  
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="INTUITIVE, CookingCourses">
+    <meta name="description" content="">
+    <meta name="generator" content="Nicepage 4.20.1, nicepage.com">
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Trang chủ">
+    <meta property="og:type" content="website">
+
+    <title>Trang chủ</title>
+
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+
+    <link rel="stylesheet" href="/static/css/resources.css" media="screen">
+
+    <link id="u-theme-google-font" rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i">
+  </head>
+<body data-home-page="Trang-chủ.html" data-home-page-title="Trang chủ" class="u-body u-xl-mode" data-lang="en">
+  
+    {% block content %}{% endblock %}
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js" integrity="sha512-rMGGF4wg1R73ehtnxXBt5mbUfN9JUJwbk21KMlnLZDJh7BkPmeovBuddZCENJddHYYMkCh9hPFnPmS9sspki8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script>
+      $(document).ready(function () {
+        $('#homePageLink').click(function(){
+          window.location.href= '/homePage/';
+        });
+        
+        $('#logout').click(function(){
+          window.location.href= '/login/';
+        });
+      });
+    </script>
+    {% block script %}{% endblock %}
+</body>
+
+</html>

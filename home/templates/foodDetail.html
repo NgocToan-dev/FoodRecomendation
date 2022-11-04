@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include './header.html'%}
+
+
+  <section class="u-clearfix u-section-1" id="sec-19e4">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout">
+          <div class="u-layout-row">
+            <div class="u-container-align-center u-container-style u-image u-layout-cell u-size-30 u-image-1"
+              data-image-width="626" data-image-height="417">
+              <div class="u-container-layout u-container-layout-1"></div>
+            </div>
+            <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
+              <div class="u-container-layout u-container-layout-2">
+                <h6 class="u-text u-text-default u-text-1">{{food.name}}</h6>
+                <h6><b>Thành phần của món ăn</b></h6>
+                <ul class="u-text u-text-default u-text-2">
+                  {% for ingredient in food.ingredients %}
+                  <li>{{ingredient}}</li>
+                  {% endfor %}
+                </ul>
+                <h6><b>Các bước thực hiện món ăn</b></h6>
+                <ol class="u-text u-text-default u-text-2">
+                  {% for step in food.steps %}
+                  <li>{{step}}</li>
+                  {% endfor %}
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-align-center u-clearfix u-section-2" id="sec-7cdc">
+    <div class="u-clearfix u-sheet u-sheet-1">
+
+      <div class="star-section">
+
+      </div>
+
+
+      <div class="u-form u-form-1">
+        <div class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 15px;">
+          <div class="u-form-group u-form-message u-label-none u-form-group-1">
+            <label for="message-6797" class="u-label">Address</label>
+            <textarea placeholder="Đánh giá sản phẩm" rows="4" cols="50" id="commentByUser" name="message"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle"></textarea>
+          </div>
+          <div class="u-align-left u-form-group u-form-submit u-form-group-2">
+            <a id="sendComment" class="u-btn u-btn-submit u-button-style">Gửi<br>
+            </a>
+            <input type="submit" value="submit" class="u-form-control-hidden">
+          </div>
+          <div class="u-form-send-message u-form-send-success">Thank you! Your message has been sent.</div>
+          <div class="u-form-send-error u-form-send-message">Unable to send your message. Please fix errors then try
+            again.</div>
+          <input type="hidden" value="" name="recaptchaResponse">
+          <input type="hidden" name="formServices" value="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-section-3" id="sec-317f">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <h6 class="u-text u-text-default u-text-palette-2-base u-text-1">Đánh giá của người dùng khác</h6>
+      <div class="u-list u-list-1">
+        <div class="u-repeater u-repeater-1">
+          {% for user in user_review %}
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-1">
+              <p class="u-text u-text-2">{{user.review}}</p><span class="u-file-icon u-icon u-icon-1"><img src="/static/img/comment.png"
+                  alt=""></span>
+              <blockquote class="u-text u-text-3">Người dùng: {{user.user_id}} <br> Ngày đánh giá: {{user.created_date}}</blockquote>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-64fe">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <p class="u-small-text u-text u-text-variant u-text-1">Created By: Phan Ngọc Toản<br>Email: pntoan156@gmail.com
+      </p><span class="u-icon u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice"
+          viewBox="0 0 50 50">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1417"></use>
+        </svg><svg class="u-svg-content" viewBox="0 0 50 50" x="0px" y="0px" id="svg-1417"
+          style="enable-background:new 0 0 50 50;">
+          <path style="fill:currentColor;" d="M24.85,10.126c2.018-4.783,6.628-8.125,11.99-8.125c7.223,0,12.425,6.179,13.079,13.543
+	c0,0,0.353,1.828-0.424,5.119c-1.058,4.482-3.545,8.464-6.898,11.503L24.85,48L7.402,32.165c-3.353-3.038-5.84-7.021-6.898-11.503
+	c-0.777-3.291-0.424-5.119-0.424-5.119C0.734,8.179,5.936,2,13.159,2C18.522,2,22.832,5.343,24.85,10.126z"></path>
+        </svg></span><span class="u-icon u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice"
+          viewBox="0 0 50 50">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-6df9"></use>
+        </svg><svg class="u-svg-content" viewBox="0 0 50 50" x="0px" y="0px" id="svg-6df9"
+          style="enable-background:new 0 0 50 50;">
+          <path style="fill:currentColor;" d="M24.85,10.126c2.018-4.783,6.628-8.125,11.99-8.125c7.223,0,12.425,6.179,13.079,13.543
+	c0,0,0.353,1.828-0.424,5.119c-1.058,4.482-3.545,8.464-6.898,11.503L24.85,48L7.402,32.165c-3.353-3.038-5.84-7.021-6.898-11.503
+	c-0.777-3.291-0.424-5.119-0.424-5.119C0.734,8.179,5.936,2,13.159,2C18.522,2,22.832,5.343,24.85,10.126z"></path>
+        </svg></span>
+    </div>
+  </footer>
+
+
+{% endblock %}
+
+{% block script %}
+<script>
+  $(document).ready(function () {
+    reviewByUser();
+    function reviewByUser() {
+      var star_full = `<span class="u-file-icon u-icon u-icon-2">
+                        <img src="/static/img/star_full.png" alt="">
+                      </span>`
+      var star_empty = `<span class="u-file-icon u-icon u-icon-2">
+                        <img src="/static/img/star_empty.png" alt="">
+                      </span>`
+      $('#sendComment').click(function () {
+        commentValue = $('#commentByUser').val();
+        $('.star-section').html('');
+        if (commentValue) {
+          $.ajax({
+            url: '',
+            type: 'POST',
+            data: {
+              'reviewByUser': 'reviewByUser',
+              'commentValue': commentValue,
+              csrfmiddlewaretoken: '{{ csrf_token }}'
+            },
+            success: function (data) {
+              try {
+                numberStar = Number(data.result[0]);
+                reviewStarHTML = '';
+                for (var i = 1; i <= 5; i++) {
+                  if (i <= numberStar) {
+                    reviewStarHTML += star_full;
+                  } else {
+                    reviewStarHTML += star_empty;
+                  }
+                }
+                $('.star-section').html(reviewStarHTML);
+              } catch (error) {
+                console.log(error);
+              }
+            },
+            error: function (data) {
+              console.log(data);
+            }
+          });
+        }
+      })
+
+    }
+
+  });
+</script>
+{% endblock %}
